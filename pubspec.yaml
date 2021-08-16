@@ -1,0 +1,19 @@
+name: argocd_outdated_apps
+description: A simple command-line application.
+version: 0.0.1
+# homepage: https://www.example.com
+
+environment:
+  sdk: '>=2.14.0-377.4.beta <3.0.0'
+
+# dependencies:
+#   path: ^1.8.0
+
+dev_dependencies:
+  lints: ^1.0.0
+  json_serializable: ^5.0.0
+  build_runner: ^2.1.1
+dependencies:
+  http: ^0.13.3
+  json_annotation: ^4.1.0
+  yaml: ^3.1.0
