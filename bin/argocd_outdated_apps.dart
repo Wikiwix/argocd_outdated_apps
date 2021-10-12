@@ -29,8 +29,14 @@ Future<void> main(List<String> arguments) async {
         final sourceData = helmApp.spec.source;
         late final String latestVersion;
         try {
-          latestVersion = (await (helmRepoData[sourceData.repoURL]))['entries']
-              [sourceData.chart][0]['version'];
+          latestVersion = ((await (helmRepoData[sourceData.repoURL]))['entries']
+                  [sourceData.chart] as List)
+              // TODO: make prerelease inclusion a flag
+              .firstWhere((element) {
+            final Map? annotations = element['annotations'];
+            return annotations == null ||
+                annotations['artifacthub.io/prerelease'] != 'true';
+          })['version'];
         } on Exception catch (e) {
           latestVersion = e.toString();
         }
