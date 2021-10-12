@@ -48,4 +48,5 @@ Future<void> main(List<String> arguments) async {
       result.where((app) => app['currentVersion'] != app['latestVersion']);
   stdout.writeln(
       JsonEncoder.withIndent('  ').convert(outdated.toList(growable: false)));
+  await stdout.flush();
 }
