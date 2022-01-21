@@ -37,7 +37,7 @@ Future<void> main(List<String> arguments) async {
             return annotations == null ||
                 annotations['artifacthub.io/prerelease'] != 'true';
           })['version'];
-        } on Exception catch (e) {
+        } on Error catch (e) {
           latestVersion = e.toString();
         }
         return {
