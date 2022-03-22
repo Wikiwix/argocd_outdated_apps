@@ -1,3 +1,10 @@
+# Changelog
+
+## 0.1.1
+
+- Update dependencies
+- Improve README
+
 ## 0.1.0
 
 - Add executable (see readme for easier calls)

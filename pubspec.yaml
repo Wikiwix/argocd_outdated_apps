@@ -1,23 +1,22 @@
 ---
 name: argocd_outdated_apps
-description: A simple command-line application.
-version: 0.1.0
+description: |
+  This tool allows to determine outdated ArgoCD `Applications` which are installed from *pubic* Helm charts, by inspecting the `Application` objects within the cluster.
+version: 0.1.1
 # homepage: https://www.example.com
 
 environment:
   sdk: '>=2.14.0 <3.0.0'
 
-# dependencies:
-#   path: ^1.8.0
+dependencies:
+  http: ^0.13.3
+  json_annotation: ^4.4.0
+  yaml: ^3.1.0
 
 dev_dependencies:
   lints: ^1.0.0
   json_serializable: ^6.1.4
   build_runner: ^2.1.1
-dependencies:
-  http: ^0.13.3
-  json_annotation: ^4.4.0
-  yaml: ^3.1.0
 
 executables:
   argocd_outdated_apps: argocd_outdated_apps
