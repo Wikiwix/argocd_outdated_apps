@@ -56,3 +56,17 @@ Future<void> main(List<String> arguments) async {
       JsonEncoder.withIndent('  ').convert(outdated.toList(growable: false)));
   await stdout.flush();
 }
+
+Future<String> getLatestVersion(Uri repo, String chart) async {
+  final result = await Process.run('helm', [
+    'show',
+    'chart',
+    '--repo="$repo"',
+    chart,
+  ]);
+  try {
+    return loadYaml(result.stdout as String)['version'];
+  } catch (e) {
+    return result.stderr.toString();
+  }
+}
