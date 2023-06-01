@@ -1,6 +1,6 @@
 # `argocd_outdated_apps`
 
-This tool allows to determine outdated ArgoCD `Applications` which are installed from *pubic* Helm charts, by inspecting the `Application` objects within the cluster.
+This tool allows to determine outdated ArgoCD `Applications` which are installed from *public* Helm charts, by inspecting the `Application` objects within the cluster.
 
 ## Usage
 
